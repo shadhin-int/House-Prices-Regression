@@ -8,7 +8,7 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import classification_report
 from sklearn.pipeline import Pipeline
 
-from schemas.text_classification import TextRequest
+from schemas.text_classification import TextRequest, TextResponse
 
 text_classification_router = APIRouter()
 
@@ -42,3 +42,19 @@ def generate_model():
     joblib.dump(text_clf, model_path)
 
     return report
+
+
+@text_classification_router.post("/classify/", response_model=TextResponse)
+def classify_text(request_data: TextRequest):
+    try:
+        # Load the pre-trained model
+        model = joblib.load("text_classification_model.pkl")
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="Model file not found")
+
+    # Predict the class and confidence
+    prediction = model.predict([request_data.text])
+    probabilities = model.predict_proba([request_data.text])[0]
+    confidence = max(probabilities)
+
+    return TextResponse(confidence=confidence, prediction=prediction[0])
