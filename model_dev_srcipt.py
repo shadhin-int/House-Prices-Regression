@@ -100,13 +100,15 @@ def main():
 
 	# find the best model
 	if rf_rmse < linear_rmse:
-		best_model = 'Random Forest Regressor'
+		model_name = 'Random Forest Regressor'
+		best_model = rf_model
 		best_rmse, best_r2 = rf_rmse, rf_r2
 	else:
-		best_model = 'Linear Regression'
+		model_name = 'Linear Regression'
+		best_model = linear_model
 		best_rmse, best_r2 = linear_rmse, linear_r2
 
-	print(f'Best Model: {best_model} - RMSE: {best_rmse}, R2: {best_r2}')
+	print(f'Best Model: {model_name} - RMSE: {best_rmse}, R2: {best_r2}')
 
 
 if __name__ == '__main__':
