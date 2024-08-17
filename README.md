@@ -102,3 +102,9 @@ API Endpoint:
         "confidence": 0.95
       }
     ```
+
+API Testing
+1. Run the tests:
+    ```
+    pytest
+    ```
