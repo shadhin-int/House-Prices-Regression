@@ -41,7 +41,7 @@ def generate_model():
     # Save the new model
     joblib.dump(text_clf, model_path)
 
-    return report
+    return {"message": "Model generated successfully"}
 
 
 @text_classification_router.post("/classify/", response_model=TextResponse)
