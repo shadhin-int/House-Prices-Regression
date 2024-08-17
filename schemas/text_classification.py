@@ -6,5 +6,5 @@ class TextRequest(BaseModel):
 
 
 class TextResponse(BaseModel):
-	class_name: str
+	prediction: int
 	confidence: float
