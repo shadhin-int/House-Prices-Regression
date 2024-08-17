@@ -1,7 +1,11 @@
 # House Prices Regression Using Fast API
 
 ## Project Overview
-This project is a REST API developed using FastAPI that allows users to submit text data and receive a classification result based on a pre-trained machine learning model. The API handles text classification requests and returns the predicted class along with a confidence score.
+This project is a REST API developed using FastAPI that 
+allows users to submit text data and receive a classification 
+result based on a pre-trained machine learning model. 
+The API handles text classification requests and returns 
+the predicted class along with a confidence score.
 
 ## Project Structure
 
@@ -35,6 +39,7 @@ house-prices-regression/
 10. Pydantic: Used for data validation and serialization.
 
 ## Installation
+
 Clone the repository: 
 ```
 git clone https://github.com/shadhin-int/House-Prices-Regression
@@ -67,27 +72,33 @@ Start the FastAPI server:
     The API will be available at http://0.0.0.0.0:8002
     ```
 
+API Documentation
+* Swagger UI: Automatically generated documentation is available at
+    ```
+    http://127.0.0.1:8000/docs
+     ```
 
 API Endpoint:
-1. GET /generate-model: Generates a new model and saves it to the disk.
+1. GET /generate-model : Generates a new model and saves it to the disk.
     Response:
     ```json
     {
       "message": "Model generated successfully"
     }
+   ```
+2. POST /classify : Accepts a JSON payload with a text field and returns the predicted class and confidence score.
+
+    Request:
+   ```json
+
+      {
+        "text": "your_text_here"
+      }
     ```
-2. POST /classify: Accepts a JSON payload with a text field and returns the predicted class and confidence score.
-   
-   - Request 
-       ```json
-       {
-         "text": "your_text_here"
-       }
-       ```
-   - Response:
-       ```json
-       {
-         "class": "your_predicted_class",
-         "confidence": 0.95
-       }
-       ```
+    Response:
+    ```json
+      {
+        "class": "your_predicted_class",
+        "confidence": 0.95
+      }
+    ```
