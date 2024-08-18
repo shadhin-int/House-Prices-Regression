@@ -16,10 +16,11 @@ house-prices-regression/
 |    └── text_classification.py            # Pydantic schemas for request and response  
 ├── model_dev_script.py                    # Script for training and saving the model  
 ├── main.py                                # Main FastAPI application  
-├── test_main.py                           # Unit tests for the FastAPI endpoints  
+├── test                                   # Unit tests for the FastAPI endpoints 
+    └── test_text_classification.py 
 ├── requirements.txt                       # Python dependencies  
 ├── README.md                              # Project documentation  
-├──text_classification_model.pkl           # Pre-trained text classification model  
+├── text_classification_model.pkl          # Pre-trained text classification model  
 ```  
   
 ## Requirements  
