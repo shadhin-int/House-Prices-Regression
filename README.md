@@ -48,7 +48,7 @@ source env/bin/activate
 ```  
 Install the dependencies:  
 ```  
-pip install -r requirements.txt  
+pip3 install -r requirements.txt  
 ```
   
 Run the FastAPI server:  
@@ -60,13 +60,17 @@ Run the FastAPI server:
 	```
 - Using python:  
     ```  
-	 python main.py  
+	 python3 main.py  
 	 The API will be available at http://0.0.0.0.0:8002
 	 ```  
 API Documentation  
 * Swagger UI: Automatically generated documentation is available at  
     ```
     http://127.0.0.1:8000/docs
+    ```
+* ReDoc: An alternative documentation interface is available at  
+    ```
+    http://127.0.0.1:8000/redoc
     ```
 
   
@@ -165,7 +169,7 @@ This report provides an overview of the process undertaken to develop a text cla
 ### 7. Preprocessing steps, model training, evaluation and model selection Script
 -  **Run the following command to model training, evaluation and find out the best model**:
     ```  
-    python model_dev_script.py  
+    python3 model_dev_script.py  
     ```  
 ## 8. Conclusion
 
